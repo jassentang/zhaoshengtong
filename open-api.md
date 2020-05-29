@@ -1,9 +1,9 @@
 ## 招生通-腾讯云API网关接入说明
 
 ### 环境定义
-测试环境：  https://service-miudptpc-1258344699.gz.apigw.tencentcs.com/test
+测试环境：  https://service-2iy312rw-1258344699.gz.apigw.tencentcs.com/test
 
-预发布环境: https://service-miudptpc-1258344699.gz.apigw.tencentcs.com/prepub
+预发布环境: https://service-6ucx1e74-1258344699.gz.apigw.tencentcs.com/prepub
 
 正式环境：  https://service-miudptpc-1258344699.gz.apigw.tencentcs.com/release
 
