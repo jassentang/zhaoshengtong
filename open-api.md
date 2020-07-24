@@ -372,7 +372,7 @@ ResponseBody:
 |请求基本信息|描述|
 |-------------|-------------|
 |方法|POST|
-|请求URL| /v1/open/platform/qywx/add-customer?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
+|请求URL| /v1/open/platform/customer/add-customer?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
 |header|Content-Type:application/json|
 
 RequestBody: 
@@ -420,7 +420,7 @@ ResponseBody:
 |请求基本信息|描述|
 |-------------|-------------|
 |方法|POST|
-|请求URL| /v1/open/platform/qywx/modify-customer?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
+|请求URL| /v1/open/platform/customer/modify-customer?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
 |header|Content-Type:application/json|
 
 RequestBody: 
