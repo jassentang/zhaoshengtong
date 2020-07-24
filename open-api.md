@@ -366,3 +366,100 @@ ResponseBody:
     }
 }
 ```
+
+### 生源
+#### 1 生源入库
+|请求基本信息|描述|
+|-------------|-------------|
+|方法|POST|
+|请求URL| /v1/open/platform/qywx/add-customer?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
+|header|Content-Type:application/json|
+
+RequestBody: 
+```json
+{
+    "userType": "学生",  // 学生、家长、其它  // 必填
+    "name": "朱小明",  //姓名  // 必填
+    "gender": 1,  // 性别  0 未知  1 男  2  女  // 必填
+    "wechat": "wwwewe",  // 微信号
+    "wxnickname": "昵称",   //微信昵称
+    "province": "湖南", // 必填 
+    "subject": "文科", // 必填
+    "middleSchool": "雅礼中学",  //毕业中学
+    "mobile": "1663876323",
+    "score": "556",
+    "unionID": "5635624524" // 必填
+}
+```
+
+ResponseBody:
+
+请求成功:
+```json
+{
+  "Response": {
+    "IsSuccess": true,
+    "TraceId": "d87904776a2ff02",
+    "RequestId": "d87904776a2ff02"
+  }
+}
+```
+请求失败(判断是否有 "Error" 字段) 示例：
+```json
+{
+    "Response": {
+        "Error": {
+          "Code": "FailedOperation",
+          "Message": "failed operation"
+        },
+        "RequestId": ""
+    }
+}
+```
+#### 2 编辑数据
+|请求基本信息|描述|
+|-------------|-------------|
+|方法|POST|
+|请求URL| /v1/open/platform/qywx/modify-customer?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
+|header|Content-Type:application/json|
+
+RequestBody: 
+```json
+{
+    "userType": "学生",  // 学生、家长、其它  // 必填
+    "name": "朱小明",  //姓名  // 必填
+    "gender": 1,  // 性别  0 未知  1 男  2  女  // 必填
+    "wechat": "wwwewe",  // 微信号
+    "wxnickname": "昵称",   //微信昵称
+    "province": "湖南", // 必填 
+    "subject": "文科", // 必填
+    "middleSchool": "雅礼中学",  //毕业中学
+    "mobile": "1663876323",
+    "score": "556",
+    "unionID": "5635624524" // 必填
+}
+```
+
+ResponseBody:
+
+请求成功:
+```json
+{
+  "Response": {
+    "cust_id": "28857850030000000000000000000120",
+    "RequestId": "d87904776a2ff02"
+  }
+}
+```
+请求失败(判断是否有 "Error" 字段) 示例：
+```json
+{
+  "Response": {
+    "Error": {
+      "Code": "FailedOperation",
+      "Message": "failed operation"
+    },
+    "RequestId": ""
+  }
+}
+```
