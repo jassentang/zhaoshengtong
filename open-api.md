@@ -35,8 +35,6 @@
 |AppID|int|必填|学校id|
 |RoleSpace|string|必填|角色空间|
 |uin|string|必填|用户uin(唯一账号标识)|
-|mobile|string|非必填|用户手机号|
-|username|string|非必填|用户的姓名(如果checktoken接口，没有返回 username，则不填；如果checktoken接口返回了 username，则必须填上)|
 
 ### 1.鉴权
 
@@ -62,16 +60,13 @@ ResponseBody:
 ```json
 {
     "Response": {
-        "QyQQMainAccount": "2885785003",      //忽略
         "Uin": "999",                         //用户唯一id
         "SdkAppID": "user",                   //用户sdkappid
         "AppID": "11",                        //学校id
         "RoleSpace": "admin",                 //用户角色空间
-        "Rights":["1","2","3","4","5","6","7"],//用户权限
         "Session":{
-          "mobile": "13266666666",            //用户手机号
           "uin": "999",                       //用户唯一id
-          "username": "nick"                  //用户名
+          "username": "nick"                  //用户名，目前同uin
         },
         "RequestId": ""
     }
@@ -94,7 +89,7 @@ ResponseBody:
 |请求基本信息|描述|
 |-------------|-------------|
 |方法|POST|
-|请求URL| /v1/open/platform/qidian/robot-query?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx&mobile=xxx&username=xxx|
+|请求URL| /v1/open/platform/qidian/robot-query?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
 |header|Content-Type:application/json|
 
 Req :
@@ -142,7 +137,7 @@ ResponseBody:
 |请求基本信息|描述|
 |-------------|-------------|
 |方法|POST|
-|请求URL| /v1/open/platform/qywx/get-contact-way-list?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx&mobile=xxx&username=xxx|
+|请求URL| /v1/open/platform/qywx/get-contact-way-list?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
 |header|Content-Type:application/json|
 
 RequestBody: 
@@ -207,7 +202,7 @@ ResponseBody:
 |请求基本信息|描述|
 |-------------|-------------|
 |方法|POST|
-|请求URL| /v1/open/platform/material/add?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx&mobile=xxx&username=xxx|
+|请求URL| /v1/open/platform/material/add?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
 |header|Content-Type:application/json|
 
 RequestBody: 
@@ -249,7 +244,7 @@ ResponseBody:
 |请求基本信息|描述|
 |-------------|-------------|
 |方法|POST|
-|请求URL| /v1/open/platform/material/edit?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx&mobile=xxx&username=xxx|
+|请求URL| /v1/open/platform/material/edit?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
 |header|Content-Type:application/json|
 
 RequestBody: 
@@ -290,7 +285,7 @@ ResponseBody:
 |请求基本信息|描述|
 |-------------|-------------|
 |方法|POST|
-|请求URL| /v1/open/platform/material/delete?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx&mobile=xxx&username=xxx|
+|请求URL| /v1/open/platform/material/delete?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
 |header|Content-Type:application/json|
 
 RequestBody: 
@@ -328,7 +323,7 @@ ResponseBody:
 |请求基本信息|描述|
 |-------------|-------------|
 |方法|POST|
-|请求URL| /v1/open/platform/material/list?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx&mobile=xxx&username=xxx|
+|请求URL| /v1/open/platform/material/list?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
 |header|Content-Type:application/json|
 
 RequestBody: 
