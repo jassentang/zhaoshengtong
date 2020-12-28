@@ -488,12 +488,12 @@ ResponseBody:
     "OrganizationId": "11133",
     "OrganizationName": "开发大学1",
     "Product": {
-      "QYWeChatNum": 301, // 企业微信账号数
-      "QDAccountNum": 25, // 企点账号数
+      "QYWeChatNum": 301, // 企业微信账号数  大于0表示有企业微信
+      "QDAccountNum": 25, // 企点账号数 大于0表示有企点账号
       "QDGroupNum": 0,  // 企点2000人群数
       "MiniProgram": 3, //  小程序基础版--1   小程序标准版--2   小程序基础版+小程序标准版--3
-      "LiveStream": 11, // 直播
-      "RobotBase": 50000, // 机器人基础包
+      "LiveStream": 11, // 直播 大于0表示有直播
+      "RobotBase": 50000, // 机器人基础包  大于0表示有机器人
       "Robot": 120000  // 机器人增值包
     },
     "ValidBegin": 1596038400000,  // 开始时间
