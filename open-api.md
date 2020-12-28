@@ -463,3 +463,55 @@ ResponseBody:
   }
 }
 ```
+
+### 学校信息
+#### 1 相关购买套餐 & 到期时间
+|请求基本信息|描述|
+|-------------|-------------|
+|方法|POST|
+|请求URL| /v1/open/platform/org/info?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
+|header|Content-Type:application/json|
+
+RequestBody: 
+```json
+{
+    
+}
+```
+
+ResponseBody:
+
+请求成功:
+```json
+{
+  "Response": {
+    "OrganizationId": "11133",
+    "OrganizationName": "开发大学1",
+    "Product": {
+      "QYWeChatNum": 301, // 企业微信账号数
+      "QDAccountNum": 25, // 企点账号数
+      "QDGroupNum": 0,  // 企点2000人群数
+      "MiniProgram": 3, //  小程序基础版--1   小程序标准版--2   小程序基础版+小程序标准版--3
+      "LiveStream": 11, // 直播
+      "RobotBase": 50000, // 机器人基础包
+      "Robot": 120000  // 机器人增值包
+    },
+    "ValidBegin": 1596038400000,  // 开始时间
+    "ValidEnd": 1690646400000,  // 结束时间
+    "TraceId": "3a1a2d2407100fd7",
+    "RequestId": "3a1a2d2407100fd7"
+  }
+}
+```
+请求失败(判断是否有 "Error" 字段) 示例：
+```json
+{
+    "Response": {
+        "Error": {
+          "Code": "FailedOperation",
+          "Message": "failed operation"
+        },
+        "RequestId": ""
+    }
+}
+```
