@@ -463,3 +463,72 @@ ResponseBody:
   }
 }
 ```
+
+### 单轮问题库JSON批量导出
+|请求基本信息|描述|
+|-------------|-------------|
+|方法|POST|
+|请求URL| /v1/open/platform/qidian/robot-query/export?SdkAppID=xxxx&AppID=xxx&RoleSpace=xxx&uin=xxx|
+|header|Content-Type:application/json|
+
+RequestBody: 
+```json
+{
+    "keyword": "关键词",  // 选填
+    "FStatus": "0"  // 查询问题的状态：0 草稿；10 停用；11 启用；12 失效 // 选填
+}
+```
+
+ResponseBody:
+
+请求成功:
+```json
+{
+    "Response": {
+        "data": [
+            {
+                "stdQId": "10004",
+                "stdQues": "上海有什么机场123？",
+                "answer": "上海有虹桥国际机场和浦东国际机场",
+                "status": 1,
+                "validity": 1,
+                "startDate": "",
+                "endDate": "",
+                "classpath": "未分类",
+                "similarQues": [
+                    "上海有哪些机场123",
+                    "上海的机场是什么123"
+                ],
+                "relatedQId": [],
+                "relatedQues": []
+            },
+            {
+                "stdQId": "",
+                "stdQues": "学校名称叫什么",
+                "answer": "小桔大数据",
+                "status": 0,
+                "validity": 1,
+                "startDate": "",
+                "endDate": "",
+                "classpath": "未分类",
+                "similarQues": [],
+                "relatedQId": [],
+                "relatedQues": []
+            }
+        ],
+        "RequestId": "4d657b26a49cd483"
+    }
+}
+```
+请求失败(判断是否有 "Error" 字段) 示例：
+```json
+{
+  "Response": {
+    "Error": {
+      "Code": "FailedOperation",
+      "Message": "failed operation"
+    },
+    "RequestId": ""
+  }
+}
+```
